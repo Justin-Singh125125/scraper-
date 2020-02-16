@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //if in production, serve up our minified react application
+//aksdjf
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
 }
