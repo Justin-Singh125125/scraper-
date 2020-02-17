@@ -25,11 +25,14 @@ module.exports = {
 	},
 
 	createArticle: (req, res) => {
-		//grab all the articles
-		scrape.then(scrapedArticles => {
-			//once we have the articles, we insert them into the database
-			db.Articles.insertMany(scrapedArticles).then(insertedArticles => {
-				res.json(insertedArticles);
+		//empty our our databse
+		db.Articles.deleteMany().then(() => {
+			//grab all the articles
+			scrape.then(scrapedArticles => {
+				//once we have the articles, we insert them into the database
+				db.Articles.insertMany(scrapedArticles).then(insertedArticles => {
+					res.json(insertedArticles);
+				});
 			});
 		});
 	},
