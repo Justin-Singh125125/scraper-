@@ -11,7 +11,13 @@ const app = express();
 //for parsing json
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+
+var corsOptions = {
+	origin: 'https://reverent-lumiere-fae1ed.netlify.com/',
+	optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 
 //if in production, serve up our minified react application
 //aksdjf
