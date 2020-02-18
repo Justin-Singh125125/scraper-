@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 var corsOptions = {
-	origin: 'http://reverent-lumiere-fae1ed.netlify.com/',
+	origin: 'https://5e4b4859e825d430c0df0c8a--reverent-lumiere-fae1ed.netlify.com/',
 	optionsSuccessStatus: 200
 };
 
