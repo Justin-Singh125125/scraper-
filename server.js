@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 var corsOptions = {
-	origin: 'https://reverent-lumiere-fae1ed.netlify.com/',
-	optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+	origin: 'http://reverent-lumiere-fae1ed.netlify.com/',
+	optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
