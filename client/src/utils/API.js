@@ -1,19 +1,20 @@
 import axios from 'axios';
+const HOST = process.env.REACT_APP_HOST || '';
 
 export default {
 	findAllWhereUnsaved: () => {
-		return axios.get('https://scrapeermanadkfja.herokuapp.com/api/articles');
+		return axios.get(`${HOST}/api/articles`);
 	},
 	findAllWhereSaved: () => {
-		return axios.get('https://scrapeermanadkfja.herokuapp.com/api/articles/saved');
+		return axios.get(`${HOST}/api/articles/saved`);
 	},
 	findOneWhereUnsaved: articleId => {
-		return axios.get(`https://scrapeermanadkfja.herokuapp.com/api/articles/${articleId}`);
+		return axios.get(`${HOST}/api/articles/${articleId}`);
 	},
 	saveArticle: articleId => {
-		return axios.put(`https://scrapeermanadkfja.herokuapp.com/api/articles/${articleId}`);
+		return axios.put(`${HOST}/api/articles/${articleId}`);
 	},
 	scrapeArticles: () => {
-		return axios.post('https://scrapeermanadkfja.herokuapp.com/api/articles');
+		return axios.post(`${HOST}/api/articles`);
 	}
 };

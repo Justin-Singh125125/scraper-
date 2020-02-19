@@ -32,7 +32,6 @@ const Homepage = props => {
 			setIsSelectedArticle(true);
 		});
 	};
-
 	return (
 		<div className={classes.root}>
 			<Grid container spacing={3}>
